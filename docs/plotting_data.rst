@@ -210,10 +210,13 @@ Creates a pseudo-color plot
 
 `pcolormesh(x, y, data, *args, **kwargs) <http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.pcolormesh>`_
 
-* x and y are matrices of the same size as data, containing the positions of the elements in the map coordinates
+* x and y are matrices containing the positions of the elements in the map coordinates
 * data is the matrix containing the data values to plot
 * The default colormap is *jet*, but the argument *cmap* can be used to change the behavior
 * Other possible arguments are documented in the `matplotlib function docs <http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.pcolormesh>`__
+
+Note that ideally the dimensions of x and y should be one greater than those of data;
+if the dimensions are the same, then the last row and column of data will be ignored.
 
 .. literalinclude:: ../code_examples/basic_functions/pcolormesh.py
 	:emphasize-lines: 22
